@@ -34,7 +34,32 @@
   <!-- <script type="module" crossorigin="" src="./assets/index.5b2b4425.js"></script> -->
   <link rel="stylesheet" href="./assets/index.5de0031e.css">
   <link rel="stylesheet" href="./assets/css2(3)">
-
+    <style>
+        .video-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #fff;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body id="page-top" data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
