@@ -66,9 +66,28 @@
                 <a href="https://dl.dropboxusercontent.com/scl/fi/3plp9xyd2bi0k95n1yifz/qphim-1.4.0.apk?rlkey=n1swujyo5244lm53nc96t3zb3&st=5rbfubwt&dl=0" class="btn me-lg-3 text-muted"   target="_blank">
                     <img src="./assets/googleplay.png" style="width:200px;"></img>
                 </a>
-                <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/Qphim/nothing/main/qphim.plist" class="btn me-lg-3 text-muted"   target="_blank">
-                    <img src="./assets/appstore.png" style="width:200px;"></img>
-                </a>
+    <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/Qphim/nothing/main/qphim.plist" class="btn me-lg-3 text-muted" target="_blank" id="download-link">
+        <img src="./assets/appstore.png" style="width:200px;"></img>
+    </a>
+
+    <div class="video-container" id="video-container">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <video controls>
+            <source src="https://raw.githubusercontent.com/Qphim/nothing/main/Video%20-%20Facebook_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        document.getElementById('download-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('video-container').style.display = 'block';
+        });
+
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('video-container').style.display = 'none';
+        });
+    </script>
                 
                 <a class="me-lg-3 mb-4 mb-lg-0 btn text-white" style="background-color:#4caf50;"
                   href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk"  target="_blank">Dành cho Tivi Apk v1.0.0 beta</a>
