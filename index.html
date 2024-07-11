@@ -34,7 +34,90 @@
   <!-- <script type="module" crossorigin="" src="./assets/index.5b2b4425.js"></script> -->
   <link rel="stylesheet" href="./assets/index.5de0031e.css">
   <link rel="stylesheet" href="./assets/css2(3)">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
 
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+
+.chplay .ios{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    text-decoration: none;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.btn img.button-image {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+    .btn img {
+      width: 154px;
+    }
+
+    .btn.green {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .btn.green:hover {
+      background-color: #45a049;
+    }
+
+    .btn.light-green {
+      background-color: #005dff;
+      color: white;
+    }
+
+    .btn.light-green:hover {
+      background-color: #00b0ff;
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: -1px 6px 16px 2px rgba(0, 0, 0, 0.2);
+    }
+    .btn.blue {
+      background-color: #0099ff;
+      color: white;
+    }
+    .btn.macOS-Logo{
+      width: 100%;
+    height: auto;
+    }
+    .macos{
+      width: 172px;
+    margin: 0 auto;
+    height: 165px;
+    }
+  </style>
 </head>
 
 <body id="page-top" data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
@@ -60,21 +143,31 @@
               <p class="lead fw-normal text-muted"> Ứng dụng giải trí mới của chúng tôi mang đến cho bạn trải nghiệm xem phim tuyệt vời ngay trên điện thoại di động của bạn. Với hàng ngàn bộ phim chiếu rạp được cập nhật liên tục và chất lượng HD đầy đủ Vietsub, bạn sẽ không bao giờ cảm thấy buồn chán.
 
                 Ứng dụng của chúng tôi cung cấp một thư viện phim đa dạng, bao gồm cả các bộ phim hoạt hình và các trận đấu bóng đá đỉnh cao, đảm bảo bạn luôn có điều gì đó để thưởng thức. Hãy thả mình vào thế giới giải trí ảo đầy màu sắc và sôi động! </p>
-              <div class="d-flex flex-column flex-lg-row align-items-center">
-                 
-                
-                <a href="https://dl.dropboxusercontent.com/scl/fi/3plp9xyd2bi0k95n1yifz/qphim-1.4.0.apk?rlkey=n1swujyo5244lm53nc96t3zb3&st=5rbfubwt&dl=0" class="btn me-lg-3 text-muted"   target="_blank">
-                    <img src="./assets/googleplay.png" style="width:200px;"></img>
+                <div class="container">
+                  <a href="https://dl.dropboxusercontent.com/scl/fi/3plp9xyd2bi0k95n1yifz/qphim-1.4.0.apk?rlkey=n1swujyo5244lm53nc96t3zb3&st=5rbfubwt&dl=0"
+                    class="btn chplay" target="_blank">
+                    <img src="./assets/googleplay.png" alt="Google Play">
+                  </a>
+                  <a href="https://testflight.apple.com/join/j6NUk1Z7" class="btn ios" target="_blank">
+                    <img src="./assets/appstore.png" alt="App Store">
+                  </a>
+                  <a class="btn green keychainify-checked"
+                    href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank">Dành cho Tivi
+                    Apk v1.0.0 beta</a>
+                  <a href="https://drive.google.com/file/d/1_qfi_WaqBS6Pf3wN0_aZrunDtXbMigNK/view?usp=sharing"
+                    class="btn light-green keychainify-checked" target="_blank">
+                    <img src="./ne6ukkej06t71.png" alt="Group Hỗ Trợ" class="button-image">
+                      Dành cho PC</a>
+                    <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank">
+                      <img src="./telegram-logo-telegram-icon-free-free-vector.jpg" alt="Group Hỗ Trợ" class="button-image">
+                      Group Hỗ Trợ
+                  </a>
+                  <div class="macos">
+                  <a href="https://t.me/motchilllll" class="btn light-green blue macOS-Logo" target="_blank">
+                    <img class="macOS-Logo" src="./da9gl56-1be1a52f-05e8-43b2-97c2-cfa2c61c34b4.png" alt="MACOS" class="button-image">
                 </a>
-                <a href="https://testflight.apple.com/join/j6NUk1Z7" class="btn me-lg-3 text-muted"   target="_blank">
-                    <img src="./assets/appstore.png" style="width:200px;"></img>
-                </a>
-                
-                <a class="me-lg-3 mb-4 mb-lg-0 btn text-white" style="background-color:#4caf50;"
-                  href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk"  target="_blank">Dành cho Tivi Apk v1.0.0 beta</a>
-                 <a href="https:///dl.dropboxusercontent.com/scl/fi/szvbyh4wineig3ldzq3i7/My-Movie-Site-win32-x64.zip?rlkey=6n03dfys1dtp8aptyp94wjo1o&st=jlyqv7pr&dl=0" class="btn text-muted" style="background-color:#dcedc8;"  target="_blank">Dành cho PC</a>
-                 <a href="https://t.me/motchilllll" class="btn text-muted" style="background-color:#dcedc8;"  target="_blank">Group Hỗ Trợ</a>
               </div>
+                                  </div>
             </div>
           </div>
           <div class="col-lg-4">
