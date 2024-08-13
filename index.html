@@ -1,334 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Tải Ứng Dụng</title>
+    //htmlcssjs cơ bản
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: "Brush Script MT", cursive;
+            font-weight: bold;
+        }
 
-  <title>Qphim - app xem phim tốc độ cao</title> <!-- Thêm title ở đây -->
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-  <link rel="icon" href="https://i.imgur.com/omZmjks.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Qphim app xem phim miễn phí không quảng cáo"> <!-- Đã thay đổi Meta description -->
-  <meta property="og:site_name" content="Qphim - app xem phim tốc độ cao"> <!-- Đã thay đổi Meta site name -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Qphim - app xem phim tốc độ cao"> <!-- Đã thay đổi Meta title -->
-  <meta property="og:description"
-    content="App Xem Phim & TV Online: Chiếu Rạp, Phim Lẻ, Phim Bộ, Bóng Đá & TV Trực Tuyến">
-  <!-- Google fonts-->
-  <!-- Google fonts-->
-  <link rel="preconnect" href="https://fonts.gstatic.com/">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="true">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&amp;display=swap"
-    rel="stylesheet">
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 21px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
+        .btn img {
+            max-width: 24px;
+            margin-right: 10px;
+        }
 
-  <link href="./assets/css2" rel="stylesheet">
-  <link href="./assets/css2(1)" rel="stylesheet">
-  <link href="./assets/css2(2)" rel="stylesheet">
-  <!-- <script type="module" crossorigin="" src="./assets/index.5b2b4425.js"></script> -->
-  <link rel="stylesheet" href="./assets/index.5de0031e.css">
-  <link rel="stylesheet" href="./assets/css2(3)">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0;
-    }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    .container {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      font-weight: bold;
-    }
+        .chplay {
+            background-color: #34a853;
+        }
 
+        .ios {
+            background-color: #007aff;
+        }
 
-.chplay .ios{
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    background-color: rgb(255, 255, 255);
-    text-decoration: none;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-}
+        .green {
+            background-color: #4caf50;
+        }
 
-.btn img.button-image {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
+        .light-green {
+            background-color: #8bc34a;
+        }
 
-    .btn img {
-      width: 154px;
-    }
+        .blue {
+            background-color: #2196f3;
+        }
+        .bluex{
+          background-color: #ff5252;
+        }
 
-    .btn.green {
-      background-color: #4caf50;
-      color: white;
-    }
+        .macos .btn {
+            background-color: #000;
+        }
 
-    .btn.green:hover {
-      background-color: #45a049;
-    }
+        .button-image {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
 
-    .btn.light-green {
-      background-color: #005dff;
-      color: white;
-    }
-
-    .btn.light-green:hover {
-      background-color: #00b0ff;
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: -1px 6px 16px 2px rgba(0, 0, 0, 0.2);
-    }
-    .btn.blue {
-      background-color: #0099ff;
-      color: white;
-    }
-    .btn.macOS-Logo{
-      width: 100%;
-    height: auto;
-    }
-    .macos{
-      width: 172px;
-    margin: 0 auto;
-    height: 165px;
-    }
-  </style>
+        .macos {
+            grid-column: span 3; 
+            display: flex;
+            justify-content: center;
+        }
+        .titles {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+            padding-bottom: 20px;
+        }
+        .ffff{
+          
+        }
+    </style>
 </head>
+<body>
+  <div class="titles">
+    Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của bạn ạ </p>
 
-<body id="page-top" data-new-gr-c-s-check-loaded="14.1080.0" data-gr-ext-installed="">
-  <div id="app" data-v-app="">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
-      <div class="container px-5"><a class="navbar-brand fw-bold" href="#page-top"><Img src="https://i.imgur.com/3qguOY5.png" width="25%"></Img></a><button
-          class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> Menu <i
-            class="bi-list"></i></button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-            <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Tính năng</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <header class="masthead">
-      <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-8">
-            <div class="mb-5 mb-lg-0 text-center text-lg-start">
-              <h1 class="display-1 lh-1 mb-3">Qphim - <br> Mang cả thế giới giải trí đến với bạn</h1>
-              <p class="lead fw-normal text-muted"> Ứng dụng giải trí mới của chúng tôi mang đến cho bạn trải nghiệm xem phim tuyệt vời ngay trên điện thoại di động của bạn. Với hàng ngàn bộ phim chiếu rạp được cập nhật liên tục và chất lượng HD đầy đủ Vietsub, bạn sẽ không bao giờ cảm thấy buồn chán.
-
-                Ứng dụng của chúng tôi cung cấp một thư viện phim đa dạng, bao gồm cả các bộ phim hoạt hình và các trận đấu bóng đá đỉnh cao, đảm bảo bạn luôn có điều gì đó để thưởng thức. Hãy thả mình vào thế giới giải trí ảo đầy màu sắc và sôi động! </p>
-              <a href="itms-services://?action=download-manifest&url=https://sign.codevn.net/data/66b47294d224f/codevndotnet.plist">Bấm vô đây để tải</a>  
-              <div class="container">
-                  <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk"
-                    class="btn chplay" target="_blank">
-                    <img src="./assets/googleplay.png" alt="Google Play">
-                  </a>
-                  <a href="itms-services://?action=download-manifest&url=https://sign.codevn.net/data/6698e34d1c994/codevndotnet.plist " class="btn ios" target="_blank">
-                    <div>Bấm vô đây để tải </div>
-                  </a>
-                  <a class="btn green keychainify-checked"
-                    href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank">Dành cho Tivi
-                    Apk v1.0.0 beta</a>
-                  <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe"
-                    class="btn light-green keychainify-checked" target="_blank">
-                    <img src="./ne6ukkej06t71.png" alt="Group Hỗ Trợ" class="button-image">
-                      Dành cho PC</a>
-                    <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank">
-                      <img src="./telegram-logo-telegram-icon-free-free-vector.jpg" alt="Group Hỗ Trợ" class="button-image">
-                      Group Hỗ Trợ
-                  </a>
-                  <div class="macos">
-                  <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn light-green blue macOS-Logo" target="_blank">
-                    <img class="macOS-Logo" src="./da9gl56-1be1a52f-05e8-43b2-97c2-cfa2c61c34b4.png" alt="MACOS" class="button-image">
-                </a>
-              </div>
-                                  </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="masthead-device-mockup"><svg class="circle" viewBox="0 0 100 100"
-                xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <lineargradient id="circleGradient" gradientTransform="rotate(45)">
-                    <stop class="gradient-start-color" offset="0%"></stop>
-                    <stop class="gradient-end-color" offset="100%"></stop>
-                  </lineargradient>
-                </defs>
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
-                  transform="translate(120.42 -49.88) rotate(45)"></rect>
-                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
-                  transform="translate(-49.88 120.42) rotate(-45)"></rect>
-              </svg><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <div class="device-wrapper">
-                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                  <div class="screen bg-black"><img style="max-width:100%;height:100%;object-fit:fill;" src="https://i.ibb.co/09P2LjH/image.png">
-                    </img></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <aside class="text-center bg-gradient-primary-to-secondary">
-      <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
-          <div class="col-xl-8">
-            <div class="h2 fs-1 text-white mb-4"> "Ứng dụng xem phim HD với giao diện đơn giản, trực quan, dễ sử
-              dụng, cực nhanh, cực nét, cực mượt" </div>
-          </div>
-        </div>
-      </div>
-    </aside>
-    <section id="features">
-      <div class="container px-5">
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
-            <div class="container-fluid px-5">
-              <div class="row gx-5">
-                <div class="col-md-6 mb-5">
-                  <div class="text-center"><i class="bi-tv icon-feature text-gradient d-block mb-3"></i>
-                    <h3 class="font-alt">Kho phim khổng lồ</h3>
-                    <p class="text-muted mb-0"> Nguồn phim được được cập nhật với đa dạng các đầu phim và
-                      thể loại vô cùng phong phú </p>
-                  </div>
-                </div>
-                <div class="col-md-6 mb-5">
-                  <div class="text-center"><i class="bi-dribbble icon-feature text-gradient d-block mb-3"></i>
-                    <h3 class="font-alt">FullHD & Vietsub</h3>
-                    <p class="text-muted mb-0"> Hàng ngàn video 4K & FullHD cùng phụ đề việt đầy đủ đang chờ bạn khám
-                      phá </p>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-5 mb-md-0">
-                  <div class="text-center"><i class="bi-newspaper icon-feature text-gradient d-block mb-3"></i>
-                    <h3 class="font-alt">Giao diện thân thiện</h3>
-                    <p class="text-muted mb-0">Giao diện được bố trí và thiết kế thân thiện với người dùng</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="text-center"><i class="bi-patch-check icon-feature text-gradient d-block mb-3"></i>
-                    <h3 class="font-alt">Miễn phí</h3>
-                    <p class="text-muted mb-0">Ứng dụng hoàn toàn miễn phí</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 order-lg-0">
-            <div class="features-device-mockup"><svg class="circle" viewBox="0 0 100 100"
-                xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <lineargradient id="circleGradient" gradientTransform="rotate(45)">
-                    <stop class="gradient-start-color" offset="0%"></stop>
-                    <stop class="gradient-end-color" offset="100%"></stop>
-                  </lineargradient>
-                </defs>
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg><svg class="shape-1 d-none d-sm-block" viewBox="0 0 240.83 240.83"
-                xmlns="http://www.w3.org/2000/svg">
-                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
-                  transform="translate(120.42 -49.88) rotate(45)"></rect>
-                <rect x="-32.54" y="78.39" width="305.92" height="84.05" rx="42.03"
-                  transform="translate(-49.88 120.42) rotate(-45)"></rect>
-              </svg><svg class="shape-2 d-none d-sm-block" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="50"></circle>
-              </svg>
-              <div class="device-wrapper">
-                <div class="device" data-device="iPhoneX" data-orientation="portrait" data-color="black">
-                  <div class="screen bg-black"><img style="max-width:100%;height:100%;object-fit:fill;" src="https://i.ibb.co/09P2LjH/image.png">
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="bg-light">
-      <div class="container px-5">
-        <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
-          <div class="col-12 col-lg-5">
-            <h2 class="display-4 lh-1 mb-4">Cập nhật Qphim 1.0.1 </h2>
-            <p class="lead fw-normal text-muted mb-lg-0"> Update phim </p>
-            <p class="lead fw-normal text-muted mb-lg-0"> Tăng tốc độ load </p>
-            <p class="lead fw-normal text-muted mb-lg-0"> Sửa lỗi crash </p>
-            <p class="lead fw-normal text-muted mb-5 mb-lg-0"> Thêm chức năng tìm theo thể loại </p>
-          </div>
-          <div class="col-sm-8 col-md-6">
-            <div class="px-5 px-sm-0"><img class="img-fluid rounded-circle" src="./assets/logo_javcave.jpg" alt="...">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="bg-black text-center py-5">
-      <div class="container px-5">
-        <div class="text-white-50 small">
-          <div class="mb-2">© Qphim 2024. All Rights Reserved.</div>
-          <div class="text-black">
-            <span>qphim</span>
-            <span>phimgi</span>
-            <span>phimmoi</span>
-            <span>phimhd</span>
-            <span>phimmoichill</span>
-            <span>phimhay</span>
-            <span>motchill</span>
-            <span>vuighe</span>
-            <span>bilutv</span>
-            <span>Iron Man</span>
-            <span>Doraemon</span>
-            <span>Du Khách Bí Ẩn</span>
-            <span>Xác Sống</span>
-            <span>Kỳ Án Truyện Tranh</span>
-            <span>Biệt Đội Siêu Anh Hùng</span>
-            <span>Tuổi Đôi Mươi</span>
-
-          </div>
-          <a href="#!">Privacy</a><span class="mx-1">·</span>
-
-          <a href="#!">Terms</a><span class="mx-1">·</span><a href="#!">FAQ</a>
-        </div>
-      </div>
-    </footer>
   </div>
-
-
+<div class="container">
+    <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk"
+       class="btn chplay" target="_blank">
+        Google Play
+    </a>
+    <a href="itms-services://?action=download-manifest&url=https://sign.codevn.net/data/6698e34d1c994/codevndotnet.plist"
+       class="btn ios" target="_blank">
+        <div>Iphone Ipa</div>
+    </a>
+    <a class="btn green keychainify-checked"
+       href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank">
+        Dành cho Tivi Apk beta
+    </a>
+    <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe"
+       class="btn light-green keychainify-checked" target="_blank">
+        Dành cho PC
+    </a>
+    <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank">
+        Group Hỗ Trợ
+    </a>  
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn light-green bluex" target="_blank">
+            Dành cho macOS
+        </a>
+</div>
 
 </body>
-<auto-scroll></auto-scroll>
-
 </html>
