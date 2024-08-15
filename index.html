@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang Tải Ứng Dụng</title>
-   <!--     //htmlcssjs cơ bản-->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,18 +70,9 @@
         .blue {
             background-color: #2196f3;
         }
-        .bluex{
-          background-color: #ff5252;
-        }
 
-        .macos .btn {
-            background-color: #000;
-        }
-
-        .button-image {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+        .bluex {
+            background-color: #ff5252;
         }
 
         .macos {
@@ -90,6 +80,7 @@
             display: flex;
             justify-content: center;
         }
+
         .titles {
             text-align: center;
             font-size: 1.5em;
@@ -97,40 +88,131 @@
             color: #333;
             padding-bottom: 20px;
         }
-        .ffff{
-          
+
+        .language-toggle {
+            margin-bottom: 20px;
         }
+        /*button*/
+        .hbtn {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 15px 40px;
+  margin: 0 3px 6px 3px;
+  text-align: center;
+  border: solid 2px #ff0000;
+  text-decoration: none;
+  color: #ffffff;
+  white-space: nowrap;
+  z-index: 0;
+  border-radius: 4px;
+}
+
+.hb-fill-on {
+    background: white;
+    color: #070707;
+
+  transition: color 0.3s ease, background "" 0s ease;
+}
+
+.hb-fill-on:hover {
+  color: #000000;
+  background: #ffffff;
+  transition: color 0.3s ease, background 0s 0.3s ease;
+}
+
+.hbtn.hb-fill-on:before {
+  position: absolute;
+  content: "";
+  background: #ff6e6e;
+  transition-duration: 0.3s;
+  z-index: -1;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: white;
+}
+
+.hbtn.hb-fill-on:hover:before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
     </style>
 </head>
 <body>
-  <div class="titles">
-    Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải nhaaa<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của cậu ạ </p>
 
-  </div>
-<div class="container">
-    <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk"
-       class="btn chplay" target="_blank">
-        Google Play
-    </a>
-    <a href="https://testflight.apple.com/join/ZM3MZMKq"
-       class="btn ios" target="_blank">
-        <div>Iphone Ios</div>
-    </a>
-    <a class="btn green keychainify-checked"
-       href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank">
-        Dành cho Tivi Apk beta
-    </a>
-    <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe"
-       class="btn light-green keychainify-checked" target="_blank">
-        Dành cho PC
-    </a>
-    <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank">
-        Group Hỗ Trợ
-    </a>  
-        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn light-green bluex" target="_blank">
+
+
+    <div class="titles" id="title-text">
+        Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải nhaaa<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của cậu ạ</p>
+    </div>
+    <div class="language-toggle ">
+        <button class="hbtn hb-fill-on" onclick="toggleLanguage('vi')">Tiếng Việt</button>
+        <button class="hbtn hb-fill-on" onclick="toggleLanguage('en')">English</button>
+    </div>
+    <div class="container">
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk"
+           class="btn chplay" target="_blank" id="btn-google-play">
+            Google Play
+        </a>
+        <a href="https://testflight.apple.com/join/ZM3MZMKq"
+           class="btn ios" target="_blank" id="btn-ios">
+            <div>Iphone Ios</div>
+        </a>
+        <a class="btn green keychainify-checked"
+           href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank" id="btn-tv-apk">
+            Dành cho Tivi Apk beta
+        </a>
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe"
+           class="btn light-green keychainify-checked" target="_blank" id="btn-pc">
+            Dành cho PC
+        </a>
+        <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank" id="btn-support-group">
+            Group Hỗ Trợ
+        </a>  
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn light-green bluex" target="_blank" id="btn-macos">
             Dành cho macOS
         </a>
-</div>
+    </div>
 
+    <script>
+        function toggleLanguage(language) {
+            const elements = {
+                vi: {
+                    titleText: 'Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải nhaaa<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của cậu ạ</p>',
+                    googlePlay: 'Google Play',
+                    ios: 'Iphone Ios',
+                    tvApk: 'Dành cho Tivi Apk beta',
+                    pc: 'Dành cho PC',
+                    supportGroup: 'Group Hỗ Trợ',
+                    macos: 'Dành cho macOS'
+                },
+                en: {
+                    titleText: 'Welcome to the movie app, Please select below to download<br><p class="ffff">We sincerely appreciate your support</p>',
+                    googlePlay: 'Google Play',
+                    ios: 'Iphone iOS',
+                    tvApk: 'For TV Apk beta',
+                    pc: 'For PC',
+                    supportGroup: 'Support Group',
+                    macos: 'For macOS'
+                }
+            };
+
+            document.getElementById('title-text').innerHTML = elements[language].titleText;
+            document.getElementById('btn-google-play').innerText = elements[language].googlePlay;
+            document.getElementById('btn-ios').innerText = elements[language].ios;
+            document.getElementById('btn-tv-apk').innerText = elements[language].tvApk;
+            document.getElementById('btn-pc').innerText = elements[language].pc;
+            document.getElementById('btn-support-group').innerText = elements[language].supportGroup;
+            document.getElementById('btn-macos').innerText = elements[language].macos;
+        }
+    </script>
+    
 </body>
 </html>
