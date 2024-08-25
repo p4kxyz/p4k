@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App xem phim 4k chất lượng cao với ngàn bộ phim :3</title>
+    <title>App Xem Phim 4K Chất Lượng Cao</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,30 +17,49 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            font-weight: bold;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
         .container {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            justify-content: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            width: 80%;
+            max-width: 900px;
         }
 
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            padding: 21px 24px;
+            padding: 15px 20px;
             border-radius: 8px;
-            font-weight: bold;
-            color: #fff;
-            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn img {
@@ -48,136 +69,82 @@
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        .chplay {
-            background-color: #34a853;
-        }
-
-        .ios {
-            background-color: #007aff;
-        }
-
-        .green {
-            background-color: #4caf50;
-        }
-
-        .light-green {
-            background-color: #8bc34a;
-        }
-
-        .blue {
-            background-color: #2196f3;
-        }
-
-        .bluex {
-            background-color: #ff5252;
-        }
-
-        .macos {
-            grid-column: span 3; 
-            display: flex;
-            justify-content: center;
-        }
+        .btn-google-play { background: linear-gradient(135deg, #34a853 0%, #0d5302 100%); }
+        .btn-ios { background: linear-gradient(135deg, #0abde3 0%, #2e86de 100%); }
+        .btn-tv-apk { background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%); }
+        .btn-pc { background: linear-gradient(135deg, #8bc34a 0%, #558b2f 100%); }
+        .btn-support-group { background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%); }
+        .btn-macos { background: linear-gradient(135deg, #ff5252 0%, #d32f2f 100%); }
 
         .titles {
             text-align: center;
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: #333;
-            padding-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: 600;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            z-index: 2;
         }
 
         .language-toggle {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 10px;
+            z-index: 2;
         }
-        /*button*/
-        .hbtn {
-  position: relative;
-  box-sizing: border-box;
-  display: inline-block;
-  overflow: hidden;
-  padding: 15px 40px;
-  margin: 0 3px 6px 3px;
-  text-align: center;
-  border: solid 2px #ff0000;
-  text-decoration: none;
-  color: #ffffff;
-  white-space: nowrap;
-  z-index: 0;
-  border-radius: 4px;
-}
 
-.hb-fill-on {
-    background: white;
-    color: #070707;
+        .language-toggle button {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            color: #ffffff;
+            backdrop-filter: blur(5px);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
 
-  transition: color 0.3s ease, background "" 0s ease;
-}
-
-.hb-fill-on:hover {
-  color: #000000;
-  background: #ffffff;
-  transition: color 0.3s ease, background 0s 0.3s ease;
-}
-
-.hbtn.hb-fill-on:before {
-  position: absolute;
-  content: "";
-  background: #ff6e6e;
-  transition-duration: 0.3s;
-  z-index: -1;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  color: white;
-}
-
-.hbtn.hb-fill-on:hover:before {
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-}
+        .language-toggle button:hover {
+            background: rgba(255, 255, 255, 0.7);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
-
+    <div class="overlay"></div>
 
     <div class="titles" id="title-text">
-        Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải nhaaa<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của cậu ạ</p>
+        Chào mừng đến với ứng dụng xem phim. Hãy chọn nền tảng để tải về:
     </div>
-    <div class="language-toggle ">
-        <button class="hbtn hb-fill-on" onclick="toggleLanguage('vi')">Tiếng Việt</button>
-        <button class="hbtn hb-fill-on" onclick="toggleLanguage('en')">English</button>
+
+    <div class="language-toggle">
+        <button onclick="toggleLanguage('vi')">Tiếng Việt</button>
+        <button onclick="toggleLanguage('en')">English</button>
     </div>
+
     <div class="container">
-        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk"
-           class="btn chplay" target="_blank" id="btn-google-play">
-            Google Play
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_arm64v8a.apk" class="btn btn-google-play" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/google-play.png" alt="Google Play Icon"/> Google Play
         </a>
-        <a href="https://testflight.apple.com/join/ZM3MZMKq"
-           class="btn ios" target="_blank" id="btn-ios">
-            <div>Iphone Ios</div>
+        <a href="https://testflight.apple.com/join/ZM3MZMKq" class="btn btn-ios" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/apple-logo.png" alt="iOS Icon"/> iPhone iOS
         </a>
-        <a class="btn green keychainify-checked"
-           href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" target="_blank" id="btn-tv-apk">
-            Dành cho Tivi Apk beta
+        <a href="https://raw.githubusercontent.com/Qphim/nothing/main/qphim-1.4.0_TVBOX.apk" class="btn btn-tv-apk" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/android-os.png" alt="Android TV Icon"/> TV Apk Beta
         </a>
-        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe"
-           class="btn light-green keychainify-checked" target="_blank" id="btn-pc">
-            Dành cho PC
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0_setup.exe" class="btn btn-pc" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/windows-10.png" alt="Windows Icon"/> Dành cho PC
         </a>
-        <a href="https://t.me/motchilllll" class="btn light-green blue" target="_blank" id="btn-support-group">
-            Group Hỗ Trợ
+        <a href="https://t.me/motchilllll" class="btn btn-support-group" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram Icon"/> Group Hỗ Trợ
         </a>  
-        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn light-green bluex" target="_blank" id="btn-macos">
-            Dành cho macOS
+        <a href="https://vcl.dichvuso.zone/QPhim_v1.5.0.zip" class="btn btn-macos" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/mac-os.png" alt="macOS Icon"/> Dành cho macOS
         </a>
     </div>
 
@@ -185,19 +152,19 @@
         function toggleLanguage(language) {
             const elements = {
                 vi: {
-                    titleText: 'Chào mừng đến với app xem phim, Vui lòng chọn dưới đây để tải nhaaa<br><p class="ffff">Chúng tớ xin chân thành cảm ơn sự ủng hộ của cậu ạ</p>',
+                    titleText: 'Chào mừng đến với ứng dụng xem phim. Hãy chọn nền tảng để tải về:',
                     googlePlay: 'Google Play',
-                    ios: 'Iphone Ios',
-                    tvApk: 'Dành cho Tivi Apk beta',
+                    ios: 'iPhone iOS',
+                    tvApk: 'TV Apk Beta',
                     pc: 'Dành cho PC',
                     supportGroup: 'Group Hỗ Trợ',
                     macos: 'Dành cho macOS'
                 },
                 en: {
-                    titleText: 'Welcome to the movie app, Please select below to download<br><p class="ffff">We sincerely appreciate your support</p>',
+                    titleText: 'Welcome to the movie app. Please select your platform to download:',
                     googlePlay: 'Google Play',
-                    ios: 'Iphone iOS',
-                    tvApk: 'For TV Apk beta',
+                    ios: 'iPhone iOS',
+                    tvApk: 'TV Apk Beta',
                     pc: 'For PC',
                     supportGroup: 'Support Group',
                     macos: 'For macOS'
@@ -205,12 +172,12 @@
             };
 
             document.getElementById('title-text').innerHTML = elements[language].titleText;
-            document.getElementById('btn-google-play').innerText = elements[language].googlePlay;
-            document.getElementById('btn-ios').innerText = elements[language].ios;
-            document.getElementById('btn-tv-apk').innerText = elements[language].tvApk;
-            document.getElementById('btn-pc').innerText = elements[language].pc;
-            document.getElementById('btn-support-group').innerText = elements[language].supportGroup;
-            document.getElementById('btn-macos').innerText = elements[language].macos;
+            document.querySelector('.btn-google-play').innerText = elements[language].googlePlay;
+            document.querySelector('.btn-ios').innerText = elements[language].ios;
+            document.querySelector('.btn-tv-apk').innerText = elements[language].tvApk;
+            document.querySelector('.btn-pc').innerText = elements[language].pc;
+            document.querySelector('.btn-support-group').innerText = elements[language].supportGroup;
+            document.querySelector('.btn-macos').innerText = elements[language].macos;
         }
     </script>
     
